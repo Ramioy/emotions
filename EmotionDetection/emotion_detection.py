@@ -18,9 +18,9 @@ def emotion_detector(payload):
         "sadness": f"{emotions_list[4][1]}",
         "dominant_emotion": f"{dominant_emotion}"
     }
-    pretty = json.dumps(formated_output, indent=2)
-    print(pretty) #Had to do this because when it is returned directly it is not formated.
-    return
+    # pretty = json.dumps(formated_output, indent=2)
+    # print(pretty) -> Had to do this because when it is returned directly it is not formated.
+    return formated_output
 
 def sort_emotions(payload):
     return payload[1]
