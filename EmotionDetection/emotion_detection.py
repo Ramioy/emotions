@@ -3,6 +3,17 @@ import json
 
 def emotion_detector(payload):
     text_to_analyse  = payload
+    if text_to_analyse == "" or text_to_analyse == None:
+        return ({
+            "anger": f"{None}",
+            "disgust": f"{None}",
+            "fear": f"{None}",
+            "joy": f"{None}",
+            "sadness": f"{None}",
+            "dominant_emotion": f"{None}",
+            }
+        )
+
     URL = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
     headers = {"grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"}
     input_json = { "raw_document": { "text": text_to_analyse  } }
